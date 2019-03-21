@@ -177,6 +177,7 @@
     <Compile Include="Assets\Scripts\PuzzleController.cs" />
     <Compile Include="Assets\Scripts\PuzzleMenus.cs" />
     <Compile Include="Assets\Scripts\PuzzleTimer.cs" />
+    <Compile Include="Assets\Scripts\ROM.cs" />
     <Compile Include="Assets\Scripts\SimonSaysController.cs" />
     <Compile Include="Assets\Scripts\StaticClass.cs" />
     <Compile Include="Assets\VR Standard Assets\Scripts\Reticle.cs" />

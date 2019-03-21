@@ -47,8 +47,8 @@ using VRStandardAssets.Utils;
 
             currState = State.Ready;
 
-            initialPos = transform.position;
-            initialRot = transform.rotation;
+            initialPos = gameObject.transform.position;
+            initialRot = gameObject.transform.rotation;
         }
 
         public void OnEnable()

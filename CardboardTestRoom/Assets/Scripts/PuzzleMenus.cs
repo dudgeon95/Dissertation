@@ -70,7 +70,7 @@ public class PuzzleMenus : MonoBehaviour
         //Set the difficulty
         if (StaticClass.Timer > 10.0f)
         {
-            StaticClass.PuzzleIncrement += 0.5f;
+            StaticClass.PuzzleIncrement++;
             print("Incremented to: " + StaticClass.PuzzleIncrement.ToString());
         }
     }
@@ -82,7 +82,7 @@ public class PuzzleMenus : MonoBehaviour
         //Set the difficulty
         if (StaticClass.Timer > 10.0f)
         {
-            StaticClass.PuzzleIncrement += 0.5f;
+            StaticClass.PuzzleIncrement++;
             print("Incremented to: " + StaticClass.PuzzleIncrement.ToString());
         }
     }

@@ -21,6 +21,9 @@ public class PuzzleController : MonoBehaviour {
     float height;
     float depth;
 
+    //offsets for the z pos
+    float LeftOffset;
+    float RightOffset;
     //pieces
     public PieceController[] pieces;
 
@@ -38,14 +41,68 @@ public class PuzzleController : MonoBehaviour {
         //Sizes in Unity units
         width = cols * pieceSize;
         height = rows * pieceSize;
+        //Reset for every new scene
+        LeftOffset = 0.0f;
+        RightOffset = 0.0f;
         for (int i = 0; i < pieces.Length; i++)
         {
-                pieces[i].transform.position += new Vector3(0, 0, -StaticClass.PuzzleIncrement);
-    
-        }
-       
+            if(pieces[i].transform.position.x < 0)
+            {
+                //leftangle
+                MovePiece(StaticClass.Left, pieces[i],LeftOffset);
+                LeftOffset += 1.5f;
+            }
+            else if(pieces[i].transform.position.x > 0)
+            {
+                //rightangle
+                MovePiece(StaticClass.Right, pieces[i],RightOffset);
+                RightOffset += 1.5f;
+            }
+            //pieces[i].transform.position = new Vector3(pieces[i].transform.position.x, pieces[i].transform.position.y, 2.5f);
+            // Debug.Log(pieces[i].name);
+            // Debug.Log(pieces[i].transform.position.z);
 
+            //Pieces alays face user
+            //get direction (pos of the piece - pos of the camera)
+            Vector3 direction = pieces[i].transform.position - Camera.main.transform.position;
+
+            //set forward of the piece negative as want the tex to face player
+            pieces[i].transform.forward = -direction;
+
+        }
     }
+
+    
+    //Determine new position of pieces based of the angle passed(ROM angle)
+    void MovePiece(float angle, PieceController piece, float offset)
+    {
+        //Edit angle based off progression so far
+        if (StaticClass.PuzzleIncrement == 0.0f)
+        {
+            angle -= 5.0f;
+        }
+        else if(StaticClass.PuzzleIncrement == 1.0f)
+        {
+            //Angle does not change
+        }
+        else if(StaticClass.PuzzleIncrement == 2.0f)
+        {
+            angle += 5.0f;
+        }
+
+        //Convert angle in radians
+        angle = angle * (Mathf.Deg2Rad);
+        print(angle);
+
+        //Calculate z position
+        float zPos =(Mathf.Abs(piece.transform.position.x)) / Mathf.Tan(angle);
+
+
+        //Change piece position
+        piece.transform.position = new Vector3(piece.transform.position.x, piece.transform.position.y, zPos + offset);
+    }
+
+
     //get the cell - col and row info from the point passed
     public Vector2 GetCellFromPoint(Vector3 point)
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class SimonSaysController : MonoBehaviour {
     public GameObject[] objects;
@@ -11,6 +12,10 @@ public class SimonSaysController : MonoBehaviour {
     GameObject LookedAt;
     public GameObject StartMenu;
     public GameObject BackMenu;
+    public Text timer;
+
+    public AudioClip MusicClip;
+    public AudioSource MusicSource;
 
     public HeadMovement Movement;
 
@@ -26,6 +31,9 @@ public class SimonSaysController : MonoBehaviour {
     int progressCount = 0;
 
     string direction;
+
+    float simonTimer;
+    float centerToBlockTimer;
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < objects.Length; i++)
@@ -33,6 +41,9 @@ public class SimonSaysController : MonoBehaviour {
             objects[i].SetActive(false);
         }
         center.SetActive(false);
+        MusicSource.clip = MusicClip;
+        print("Active");
+        Debug.Log("Active");
 	}
 	
 	// Update is called once per frame
@@ -40,11 +51,12 @@ public class SimonSaysController : MonoBehaviour {
         if(gameActive)
         {
             LookedAt = Movement.DirectionRaycast();
-            
+            simonTimer += Time.deltaTime;
             PlayGame();
         }
-        
-        
+        timer.text = simonTimer.ToString("F");
+
+
     }
 
     void PlayGame()
@@ -55,22 +67,40 @@ public class SimonSaysController : MonoBehaviour {
             {
                 NextDirection();
                 print("Next Direction");
+                centerToBlockTimer = 0.0f;
+                if(progressCount > 1)
+                {
+                    moveBlocks(0.25f);
+                }
             }
             else if (LookedAt == activeObject)
             {
                 print("Look Detected");
+                MusicSource.Play();
                 print(LookedAt.name);
                 activeObject.SetActive(false);
                 ResetToCenter();
             }
             else
             {
+                if(activeObject.name != "Center" && progressCount > 1)
+                {
+                    centerToBlockTimer += Time.deltaTime;
+                    if(centerToBlockTimer > 5.0f)
+                    {
+                        moveBlocks(-0.0005f);
+                    }
+                    print(centerToBlockTimer);
+                }
+               
                 //print("-");
             }
         }
         else
         {
             BackMenu.SetActive(true);
+            gameActive = false;
+            
             print("Game Done");
         }
     }
@@ -131,6 +161,38 @@ public class SimonSaysController : MonoBehaviour {
                 return "West";
             default:
                 return "NotSet";
+        }
+    }
+    //+ve position will move the blocks out, -ve position will move the blocks in
+    void moveBlocks(float position)
+    {
+        for (int i = 0; i < objects.Length; i++)
+        {
+            switch(objects[i].name)
+            {
+                case "North":
+                    if(objects[i].transform.position.y <= 6  && objects[i].transform.position.y >= 4) //Max position - Min position
+                    objects[i].transform.position += new Vector3(0, position, 0);
+                    break;
+                case "South":
+                    if(objects[i].transform.position.y >= 0 && objects[i].transform.position.y <= 2) //Doesnt go below the floor
+                    {
+                        objects[i].transform.position += new Vector3(0, -position, 0);
+                    }
+                    break;
+                case "West":
+                    if (objects[i].transform.position.x >= -3 && objects[i].transform.position.x <= -1) //Max position - Min
+                    {
+                        objects[i].transform.position += new Vector3(-position, 0, 0);
+                    }
+                    break;
+                case "East":
+                    if (objects[i].transform.position.x <= 3 && objects[i].transform.position.x >= 1) //Max position - Min
+                    {
+                        objects[i].transform.position += new Vector3(position, 0, 0);
+                    }
+                    break;
+            }
         }
     }
 }
