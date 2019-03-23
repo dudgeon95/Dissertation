@@ -69,7 +69,7 @@ public class PieceController : MonoBehaviour {
         RaycastHit[] hits;
 
         //Find elements
-        hits = Physics.RaycastAll(transform.position, -transform.forward, 2);
+        hits = Physics.RaycastAll(transform.position, -transform.forward, 20);
 
 
 

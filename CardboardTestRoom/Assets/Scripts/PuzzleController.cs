@@ -50,16 +50,16 @@ public class PuzzleController : MonoBehaviour {
             {
                 //leftangle
                 MovePiece(StaticClass.Left, pieces[i],LeftOffset);
-                LeftOffset += 1.5f;
+                LeftOffset += 1.0f;
             }
             else if(pieces[i].transform.position.x > 0)
             {
                 //rightangle
                 MovePiece(StaticClass.Right, pieces[i],RightOffset);
-                RightOffset += 1.5f;
+                RightOffset += 1.0f;
             }
             //pieces[i].transform.position = new Vector3(pieces[i].transform.position.x, pieces[i].transform.position.y, 2.5f);
-            // Debug.Log(pieces[i].name);
+             //Debug.Log(pieces[i].name);
             // Debug.Log(pieces[i].transform.position.z);
 
             //Pieces alays face user
@@ -79,7 +79,7 @@ public class PuzzleController : MonoBehaviour {
         //Edit angle based off progression so far
         if (StaticClass.PuzzleIncrement == 0.0f)
         {
-            angle -= 5.0f;
+            angle -= 2.5f;
         }
         else if(StaticClass.PuzzleIncrement == 1.0f)
         {
@@ -87,19 +87,38 @@ public class PuzzleController : MonoBehaviour {
         }
         else if(StaticClass.PuzzleIncrement == 2.0f)
         {
-            angle += 5.0f;
+            angle += 2.5f;
         }
 
         //Convert angle in radians
         angle = angle * (Mathf.Deg2Rad);
-        print(angle);
+        //print(angle);
 
         //Calculate z position
         float zPos =(Mathf.Abs(piece.transform.position.x)) / Mathf.Tan(angle);
-
-
+        zPos += offset;
+        print("Zpos: " + zPos);
+         
+        if(zPos> 5.15f)
+        {
+            zPos = 5.2f;
+            float xPos = (Mathf.Abs(zPos)) * Mathf.Tan(angle);
+            if(piece.transform.position.x < 0)
+            {
+                xPos = -xPos;
+            }
+            xPos += offset;
+            piece.transform.position = new Vector3(xPos, piece.transform.position.y, zPos);
+           // zPos = (Mathf.Abs(piece.transform.position.x)) / Mathf.Tan(angle);
+            //zPos += offset;
+            print("x changed loop");
+        }
+        else { 
         //Change piece position
-        piece.transform.position = new Vector3(piece.transform.position.x, piece.transform.position.y, zPos + offset);
+        piece.transform.position = new Vector3(piece.transform.position.x, piece.transform.position.y, zPos);
+        }
+        Debug.Log(piece.name);
+        Debug.Log(piece.transform.position.z);
     }
 
 
