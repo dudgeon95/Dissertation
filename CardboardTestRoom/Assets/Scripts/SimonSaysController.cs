@@ -34,17 +34,33 @@ public class SimonSaysController : MonoBehaviour {
 
     float simonTimer;
     float centerToBlockTimer;
+
+    //The postions based of the angles from  the Rom
+    float maxLeft, maxRight, maxUp, maxDown;
+    //angles
+    float upAngle, downAngle, rightAngle, leftAngle;
 	// Use this for initialization
 	void Start () {
+        //Read in the angles
+        upAngle = 50.0f /*StaticClass.Up*/;
+        downAngle = 40.0f /*StaticClass.Down*/;
+        rightAngle = 60.0f /* StaticClass.Right*/;
+        leftAngle = 60.0f /* StaticClass.Left*/;
 		for (int i = 0; i < objects.Length; i++)
         {
             objects[i].SetActive(false);
+            SetMaxPosition(objects[i]);
+           
         }
         center.SetActive(false);
         MusicSource.clip = MusicClip;
         print("Active");
         Debug.Log("Active");
-	}
+        print("Left: " + maxLeft);
+        print("Right: " + maxRight);
+        print("Up: " + maxUp);
+        print("Down: " + maxDown);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -100,7 +116,8 @@ public class SimonSaysController : MonoBehaviour {
         {
             BackMenu.SetActive(true);
             gameActive = false;
-            
+            StaticClass.Cube = simonTimer;
+            StaticClass.cubeComplete = true;
             print("Game Done");
         }
     }
@@ -171,28 +188,54 @@ public class SimonSaysController : MonoBehaviour {
             switch(objects[i].name)
             {
                 case "North":
-                    if(objects[i].transform.position.y <= 6  && objects[i].transform.position.y >= 4) //Max position - Min position
+                    if(objects[i].transform.position.y <= maxUp  && objects[i].transform.position.y >= 3.5f) //Max position - Min position (Start pos)
                     objects[i].transform.position += new Vector3(0, position, 0);
                     break;
                 case "South":
-                    if(objects[i].transform.position.y >= 0 && objects[i].transform.position.y <= 2) //Doesnt go below the floor
+                    if(objects[i].transform.position.y >= maxDown && objects[i].transform.position.y <= 2.5f) //Max position - Min position (Start pos)
                     {
                         objects[i].transform.position += new Vector3(0, -position, 0);
                     }
                     break;
                 case "West":
-                    if (objects[i].transform.position.x >= -3 && objects[i].transform.position.x <= -1) //Max position - Min
+                    if (objects[i].transform.position.x >= maxLeft && objects[i].transform.position.x <= -0.5f) //Max position - Min position (Start pos)
                     {
                         objects[i].transform.position += new Vector3(-position, 0, 0);
                     }
                     break;
                 case "East":
-                    if (objects[i].transform.position.x <= 3 && objects[i].transform.position.x >= 1) //Max position - Min
+                    if (objects[i].transform.position.x <= maxRight && objects[i].transform.position.x >= 0.5f) //Max position - Min position (Start pos)
                     {
                         objects[i].transform.position += new Vector3(position, 0, 0);
                     }
                     break;
             }
+        }
+    }
+
+    float CalculatePositionFromAngle(float angle, GameObject cube)
+    {
+        //Convert angle to radians
+        angle = angle * Mathf.Deg2Rad;
+        return (cube.transform.position.z) * Mathf.Tan(angle);
+    }
+    void SetMaxPosition(GameObject cube)
+    {
+        switch (cube.name)
+        {
+            case "North":
+                maxUp = cube.transform.position.y + CalculatePositionFromAngle(upAngle, cube);
+                break;
+            case "South":
+                maxDown = cube.transform.position.y - CalculatePositionFromAngle(downAngle, cube);
+                break;
+            case "East":
+                maxRight = cube.transform.position.x + CalculatePositionFromAngle(rightAngle, cube);
+                break;
+            case "West":
+                maxLeft = cube.transform.position.x - CalculatePositionFromAngle(leftAngle, cube);
+                break;
+
         }
     }
 }

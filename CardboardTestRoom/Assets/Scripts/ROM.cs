@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using VRStandardAssets.Utils;
 using TMPro;
-
+using System.IO;
 
 public class ROM : MonoBehaviour {
     private Vector3 angle;
@@ -29,6 +29,7 @@ public class ROM : MonoBehaviour {
         progession = 0;
         waitForPlayer = false;
         active = false;
+        
     }
 	
 	// Update is called once per frame
@@ -162,7 +163,10 @@ public class ROM : MonoBehaviour {
     }
     void EndROM()
     {
+        
         StartMenu.SetActive(false);
         FinishedMenu.SetActive(true);
     }
+
+    
 }

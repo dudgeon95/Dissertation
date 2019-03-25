@@ -219,7 +219,12 @@ public class PuzzleController : MonoBehaviour {
                 //Stop timer
                 timer.ToggleActive(false);
                 //Save the timer
+                //For next use
                 StaticClass.Timer = timer.GetElapsed();
+                //for write use
+                SavePuzzleTime();
+                StaticClass.puzzleProgression++;
+
             }
         }
         //If not correct send pieces to original position
@@ -232,5 +237,24 @@ public class PuzzleController : MonoBehaviour {
         }
         
 
+    }
+    void SavePuzzleTime()
+    {
+        if(StaticClass.puzzleProgression == 1.0f)
+        {
+            StaticClass.Puzzle1 = timer.GetElapsed();
+            print("Puzzle 1 timer stored");
+        }
+        else if(StaticClass.puzzleProgression == 2.0f)
+        {
+            StaticClass.Puzzle2 = timer.GetElapsed();
+            print("Puzzle 2 timer stored");
+        }
+        else if(StaticClass.puzzleProgression == 3.0f)
+        {
+            StaticClass.Puzzle3 = timer.GetElapsed();
+            print("Puzzle 3 timer stored");
+            StaticClass.puzzleComplete = true;
+        }
     }
 }
