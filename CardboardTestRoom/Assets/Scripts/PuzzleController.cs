@@ -36,6 +36,8 @@ public class PuzzleController : MonoBehaviour {
     //Unsuccessful completion
     public event Action OnFailure;
 
+
+    float printTimer;
      void Awake()
     {
         //Sizes in Unity units
@@ -72,7 +74,14 @@ public class PuzzleController : MonoBehaviour {
         }
     }
 
-    
+    void Update()
+    {
+        printTimer += Time.deltaTime;
+        if(printTimer >= 2) { 
+            print("Angle " + Camera.main.transform.localEulerAngles.ToString());
+            printTimer = 0;        
+        }
+    }
     //Determine new position of pieces based of the angle passed(ROM angle)
     void MovePiece(float angle, PieceController piece, float offset)
     {
