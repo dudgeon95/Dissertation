@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 
@@ -35,7 +36,7 @@ public class PuzzleController : MonoBehaviour {
 
     //Unsuccessful completion
     public event Action OnFailure;
-
+    
 
     float printTimer;
      void Awake()
@@ -77,11 +78,23 @@ public class PuzzleController : MonoBehaviour {
     void Update()
     {
         printTimer += Time.deltaTime;
-        if(printTimer >= 2) { 
-            print("Angle " + Camera.main.transform.localEulerAngles.ToString());
-            printTimer = 0;        
-        }
+        //if(printTimer >= 2) { 
+        // print("Angle " + Camera.main.transform.localEulerAngles.y.ToString() + " Time: " + printTimer.ToString());
+        //printTimer = 0;        
+        //}
+       // WriteToFile();
     }
+
+
+    //Write the information to a file
+    void WriteToFile()
+    {
+        string contents = Camera.main.transform.localEulerAngles.y.ToString() + "," + printTimer.ToString();
+        string FILE_PATH2 = Application.persistentDataPath + "/AngleFile.csv";
+        File.AppendAllText(FILE_PATH2, Environment.NewLine + contents);
+        print("Wrote to file");
+    }
+
     //Determine new position of pieces based of the angle passed(ROM angle)
     void MovePiece(float angle, PieceController piece, float offset)
     {
