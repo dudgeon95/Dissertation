@@ -11,10 +11,16 @@ public class MenuController : MonoBehaviour {
     //Get the menu object
     public GameObject BackMenu;
     //Get the save data button;
-    public GameObject DataButton;
+    public GameObject DataButton, PuzzleButton, CubeButton, ROMButton;
     public GameObject confirmText;
     void Update()
     {
+        if (StaticClass.ROMComplete)
+        {
+            ROMButton.SetActive(false);
+            PuzzleButton.SetActive(true);
+            CubeButton.SetActive(true);
+        }
         if(StaticClass.puzzleComplete && StaticClass.cubeComplete)
         {
             DataButton.SetActive(true);
@@ -55,6 +61,10 @@ public class MenuController : MonoBehaviour {
         SceneManager.LoadScene("SimonSays");
     }
 
+    public void LoadROM()
+    {
+        SceneManager.LoadScene("ROM");
+    }
     
     //Write the information to a file
     public void WriteToFile()

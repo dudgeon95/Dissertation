@@ -2,8 +2,8 @@ Android
 PlayerPath?
 C:/Users/Dudge/Documents/CardboardTestRoom/CardboardTestRoom.apk
 SceneListBegin?
-Assets/Scenes/ROM.unity
 Assets/Scenes/StartRoom.unity
+Assets/Scenes/ROM.unity
 Assets/Scenes/PuzzleRoom1.unity
 Assets/Scenes/PuzzleRoom2.unity
 Assets/Scenes/PuzzleRoom3.unity
@@ -220,7 +220,7 @@ ba85572c14d367c93a1963e152be5908 Assembly-CSharp.dll:ZenvaVR.VRCalloutController
 3ac8d5b7f4bcbee3d7bbb3a138961f8d Assembly-CSharp.dll:.GvrLaserVisual
 f142e6ecc4808ecaf8c033a7cfbf63da Assembly-CSharp.dll:VRStandardAssets.Utils.VRCameraUI
 bda0a27cd4d9116a0b3ec51a3800512c Assembly-CSharp.dll:.GvrControllerVisual
-068ba736a0fc22c870ee18b16297bd22 Assembly-CSharp.dll:.MenuController
+0fea9e2107c9a277860ef05e85de4154 Assembly-CSharp.dll:.MenuController
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:GoogleVR.VideoDemo.ScrubberEvents
 6e0492d36b30c27e7b28ea1fc75b2712 Assembly-CSharp.dll:.PuzzleController
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:VRStandardAssets.Utils.VRFPSCounter

@@ -61,6 +61,7 @@ public class ROM : MonoBehaviour {
     public void MainMenu()
     {
         SceneManager.LoadScene("StartRoom");
+        StaticClass.ROMComplete = true;
     }
 
     void StartROM()

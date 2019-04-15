@@ -9,7 +9,7 @@ public static class StaticClass
     private static float UpAngle, DownAngle, RightAngle, LeftAngle;
     private static float puzzle1Timer, puzzle2Timer, puzzle3Timer, cubeTimer;
     private static float pProgression;
-    private static bool pComplete, cComplete;
+    private static bool pComplete, cComplete, RComplete;
 
     public static float Timer
     {
@@ -157,6 +157,18 @@ public static class StaticClass
         set
         {
             cComplete = value;
+        }
+    }
+
+    public static bool ROMComplete
+    {
+        get
+        {
+            return RComplete;
+        }
+        set
+        {
+            RComplete = value;
         }
     }
 
