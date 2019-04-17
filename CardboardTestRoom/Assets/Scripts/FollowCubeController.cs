@@ -5,7 +5,7 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 
-public class SimonSaysController : MonoBehaviour {
+public class FollowCubeController : MonoBehaviour {
     public GameObject[] objects;
     public GameObject center;
     GameObject activeObject;
@@ -42,10 +42,10 @@ public class SimonSaysController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //Read in the angles
-        upAngle = 50.0f /*StaticClass.Up*/;
-        downAngle = 40.0f /*StaticClass.Down*/;
-        rightAngle = 60.0f /* StaticClass.Right*/;
-        leftAngle = 60.0f /* StaticClass.Left*/;
+        upAngle = StaticClass.Up;
+        downAngle = StaticClass.Down;
+        rightAngle = StaticClass.Right;
+        leftAngle = StaticClass.Left;
 		for (int i = 0; i < objects.Length; i++)
         {
             objects[i].SetActive(false);

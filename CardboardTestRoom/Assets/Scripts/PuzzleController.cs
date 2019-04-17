@@ -161,7 +161,7 @@ public class PuzzleController : MonoBehaviour {
         //Assumptions:
         //1) The horizontal is x not z, z is the depth
         //2) the anchor point of the puzzle is its center
-        //3) No padding all the pices fit the puzzles perfectly
+        //3) No padding all the pieces fit the puzzle perfectly
         //4) the face of the puzzle is not rotated about x or z
 
         //get col
@@ -241,11 +241,11 @@ public class PuzzleController : MonoBehaviour {
                 //Stop timer
                 timer.ToggleActive(false);
                 //Save the timer
-                //For next use
+                //For next puzzle use
                 StaticClass.Timer = timer.GetElapsed();
+                StaticClass.puzzleProgression++;
                 //for write use
                 SavePuzzleTime();
-                StaticClass.puzzleProgression++;
 
             }
         }

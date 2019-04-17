@@ -519,6 +519,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackMenu: {fileID: 0}
   DataButton: {fileID: 0}
+  PuzzleButton: {fileID: 0}
+  CubeButton: {fileID: 0}
+  ROMButton: {fileID: 0}
   confirmText: {fileID: 0}
 --- !u!65 &193451783
 BoxCollider:
@@ -2440,7 +2443,7 @@ GameObject:
   - component: {fileID: 1439545622}
   - component: {fileID: 1439545621}
   m_Layer: 0
-  m_Name: SimonSaysController
+  m_Name: FollowCubeController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2469,7 +2472,7 @@ MonoBehaviour:
   MusicClip: {fileID: 8300000, guid: a22b8c429f521429084d616c68dda19a, type: 3}
   MusicSource: {fileID: 1326710320}
   Movement: {fileID: 1566052729}
-  maxRounds: 5
+  maxRounds: 6
 --- !u!4 &1439545622
 Transform:
   m_ObjectHideFlags: 0
@@ -2618,6 +2621,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackMenu: {fileID: 0}
   DataButton: {fileID: 0}
+  PuzzleButton: {fileID: 0}
+  CubeButton: {fileID: 0}
+  ROMButton: {fileID: 0}
   confirmText: {fileID: 0}
 --- !u!65 &1587444496
 BoxCollider:

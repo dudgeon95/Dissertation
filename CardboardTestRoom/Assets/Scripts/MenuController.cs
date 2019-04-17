@@ -56,9 +56,9 @@ public class MenuController : MonoBehaviour {
         SceneManager.LoadScene("StartRoom");
     }
 
-    public void LoadSimonSays()
+    public void FollowTheCube()
     {
-        SceneManager.LoadScene("SimonSays");
+        SceneManager.LoadScene("FollowTheCube");
     }
 
     public void LoadROM()

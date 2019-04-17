@@ -65,6 +65,7 @@ public class PieceController : MonoBehaviour {
 
     void HandleDrop()
     {
+       
         //Raycast hits
         RaycastHit[] hits;
 

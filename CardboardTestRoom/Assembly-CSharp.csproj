@@ -170,6 +170,7 @@
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
     <Compile Include="Assets\InteractiveButton.cs" />
     <Compile Include="Assets\Scripts\Draggable.cs" />
+    <Compile Include="Assets\Scripts\FollowCubeController.cs" />
     <Compile Include="Assets\Scripts\HeadMovement.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\MoveBall.cs" />
@@ -178,7 +179,6 @@
     <Compile Include="Assets\Scripts\PuzzleMenus.cs" />
     <Compile Include="Assets\Scripts\PuzzleTimer.cs" />
     <Compile Include="Assets\Scripts\ROM.cs" />
-    <Compile Include="Assets\Scripts\SimonSaysController.cs" />
     <Compile Include="Assets\Scripts\StaticClass.cs" />
     <Compile Include="Assets\VR Standard Assets\Scripts\Reticle.cs" />
     <Compile Include="Assets\VR Standard Assets\Scripts\VRCameraUI.cs" />
