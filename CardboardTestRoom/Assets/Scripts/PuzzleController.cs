@@ -28,6 +28,8 @@ public class PuzzleController : MonoBehaviour {
     //pieces
     public PieceController[] pieces;
 
+    Draggable drag;
+
     //Timer
     public PuzzleTimer timer;
 
@@ -62,9 +64,9 @@ public class PuzzleController : MonoBehaviour {
                 RightOffset += 1.0f;
             }
             //pieces[i].transform.position = new Vector3(pieces[i].transform.position.x, pieces[i].transform.position.y, 2.5f);
-             //Debug.Log(pieces[i].name);
+            //Debug.Log(pieces[i].name);
             // Debug.Log(pieces[i].transform.position.z);
-
+            pieces[i].SetInitialVals(pieces[i].gameObject.transform.position, pieces[i].gameObject.transform.rotation);
             //Pieces alays face user
             //get direction (pos of the piece - pos of the camera)
             Vector3 direction = pieces[i].transform.position - Camera.main.transform.position;
@@ -243,9 +245,9 @@ public class PuzzleController : MonoBehaviour {
                 //Save the timer
                 //For next puzzle use
                 StaticClass.Timer = timer.GetElapsed();
-                StaticClass.puzzleProgression++;
                 //for write use
                 SavePuzzleTime();
+                StaticClass.puzzleProgression++;
 
             }
         }

@@ -143,4 +143,9 @@ public class PieceController : MonoBehaviour {
     {
         drag.SetBlockState(block);
     }
+
+    public void SetInitialVals(Vector3 pos, Quaternion rot)
+    {
+        drag.SetInitial(pos, rot);
+    }
 }

@@ -29,7 +29,7 @@ public class PuzzleTimer : MonoBehaviour {
         if(active)
         {
             elapsed += Time.deltaTime;
-            WriteToFile();
+           // WriteToFile();
         }
         
         timerText.text = elapsed.ToString("F");

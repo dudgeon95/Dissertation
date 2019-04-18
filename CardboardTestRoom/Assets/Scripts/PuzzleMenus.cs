@@ -44,7 +44,7 @@ public class PuzzleMenus : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("StartRoom");
-        //Reset thhe puzzle timer
+        //Reset the puzzle timer
         StaticClass.Timer = 0.0f;
     }
 

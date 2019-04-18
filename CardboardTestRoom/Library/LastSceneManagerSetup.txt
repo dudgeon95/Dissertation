@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/FollowTheCube.unity
+- path: Assets/Scenes/StartRoom.unity
   isLoaded: 1
   isActive: 1

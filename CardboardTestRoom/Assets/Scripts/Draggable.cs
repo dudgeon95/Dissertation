@@ -47,8 +47,7 @@ using VRStandardAssets.Utils;
 
             currState = State.Ready;
 
-            initialPos = gameObject.transform.position;
-            initialRot = gameObject.transform.rotation;
+            
         }
 
         public void OnEnable()
@@ -60,6 +59,12 @@ using VRStandardAssets.Utils;
         {
             vrInteractive.OnClick -= HandleClick;
         }
+
+         public void SetInitial(Vector3 pos, Quaternion rot)
+         {
+             initialPos = pos;
+             initialRot = rot;
+         }
 
         public void HandleClick()
         {
