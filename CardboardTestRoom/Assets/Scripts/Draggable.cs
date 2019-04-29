@@ -31,13 +31,10 @@ using VRStandardAssets.Utils;
         Vector3 initialPos;
         Quaternion initialRot;
 
-        //Keep track is something is already being dragged
+        //Keep track if something is already being dragged
         static bool isDragging = false;
 
-        // Use this for initialization
-        void Start()
-        {
-        }
+       
 
       
         private void Awake()

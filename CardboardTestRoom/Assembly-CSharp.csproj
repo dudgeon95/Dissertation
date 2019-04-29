@@ -173,7 +173,6 @@
     <Compile Include="Assets\Scripts\FollowCubeController.cs" />
     <Compile Include="Assets\Scripts\HeadMovement.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
-    <Compile Include="Assets\Scripts\MoveBall.cs" />
     <Compile Include="Assets\Scripts\PieceController.cs" />
     <Compile Include="Assets\Scripts\PuzzleController.cs" />
     <Compile Include="Assets\Scripts\PuzzleMenus.cs" />

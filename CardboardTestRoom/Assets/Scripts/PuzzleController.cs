@@ -38,9 +38,9 @@ public class PuzzleController : MonoBehaviour {
 
     //Unsuccessful completion
     public event Action OnFailure;
-    
+   
+   
 
-    float printTimer;
      void Awake()
     {
         //Sizes in Unity units
@@ -63,11 +63,9 @@ public class PuzzleController : MonoBehaviour {
                 MovePiece(StaticClass.Right, pieces[i],RightOffset);
                 RightOffset += 1.0f;
             }
-            //pieces[i].transform.position = new Vector3(pieces[i].transform.position.x, pieces[i].transform.position.y, 2.5f);
-            //Debug.Log(pieces[i].name);
-            // Debug.Log(pieces[i].transform.position.z);
+           
             pieces[i].SetInitialVals(pieces[i].gameObject.transform.position, pieces[i].gameObject.transform.rotation);
-            //Pieces alays face user
+            //Pieces always face user
             //get direction (pos of the piece - pos of the camera)
             Vector3 direction = pieces[i].transform.position - Camera.main.transform.position;
 
@@ -76,26 +74,7 @@ public class PuzzleController : MonoBehaviour {
 
         }
     }
-
-    void Update()
-    {
-        printTimer += Time.deltaTime;
-        //if(printTimer >= 2) { 
-        // print("Angle " + Camera.main.transform.localEulerAngles.y.ToString() + " Time: " + printTimer.ToString());
-        //printTimer = 0;        
-        //}
-       // WriteToFile();
-    }
-
-
-    //Write the information to a file
-    void WriteToFile()
-    {
-        string contents = Camera.main.transform.localEulerAngles.y.ToString() + "," + printTimer.ToString();
-        string FILE_PATH2 = Application.persistentDataPath + "/AngleFile.csv";
-        File.AppendAllText(FILE_PATH2, Environment.NewLine + contents);
-        print("Wrote to file");
-    }
+    
 
     //Determine new position of pieces based of the angle passed(ROM angle)
     void MovePiece(float angle, PieceController piece, float offset)
@@ -133,8 +112,6 @@ public class PuzzleController : MonoBehaviour {
             }
             xPos += offset;
             piece.transform.position = new Vector3(xPos, piece.transform.position.y, zPos);
-           // zPos = (Mathf.Abs(piece.transform.position.x)) / Mathf.Tan(angle);
-            //zPos += offset;
             print("x changed loop");
         }
         else { 

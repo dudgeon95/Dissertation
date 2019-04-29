@@ -6,10 +6,10 @@ using System;
 using UnityEngine.UI;
 
 public class FollowCubeController : MonoBehaviour {
+    //The cubes
     public GameObject[] objects;
+    //center cube
     public GameObject center;
-    GameObject activeObject;
-    GameObject LookedAt;
     public GameObject StartMenu;
     public GameObject BackMenu;
     public Text timer;
@@ -18,6 +18,9 @@ public class FollowCubeController : MonoBehaviour {
     public AudioSource MusicSource;
 
     public HeadMovement Movement;
+
+    GameObject activeObject;
+    GameObject LookedAt;
 
     bool gameActive = false;
 
@@ -108,8 +111,6 @@ public class FollowCubeController : MonoBehaviour {
                     }
                     print(centerToBlockTimer);
                 }
-               
-                //print("-");
             }
         }
         else

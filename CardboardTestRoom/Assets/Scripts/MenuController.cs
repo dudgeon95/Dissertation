@@ -70,7 +70,6 @@ public class MenuController : MonoBehaviour {
     public void WriteToFile()
     {
         string d = DateTime.Now.ToString();
-        //print(d);
         string FILE_PATH = Application.persistentDataPath +"/DataFile.txt";
 
         StreamWriter sr = File.CreateText(FILE_PATH);

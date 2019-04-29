@@ -34,10 +34,6 @@ public class ROM : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //if(Input.GetButtonDown("Fire1"))
-        //{
-        //    OnClick();
-        //}
         if (active)
         {
             StartROM();

@@ -5,18 +5,13 @@ using UnityEngine;
 
 public class HeadMovement : MonoBehaviour {
     
-
-	void Awake ()
-    {
-
-	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         DirectionRaycast();
     }
-
+    // Returns the object that the raycast hits
     public GameObject DirectionRaycast()
     {
         Ray ray = new Ray(transform.position, transform.forward);
@@ -24,28 +19,7 @@ public class HeadMovement : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hitObject, 5.0f))
         {
-            //print(hitObject.transform.gameObject.name);
             return hitObject.transform.gameObject;
-            //switch (hitObject.transform.gameObject.name)
-            //{
-            //    case "North":
-            //       // print("Looked Up");
-            //        return true;
-            //    case "South":
-            //       // print("Looked Down");
-            //        return true;
-            //    case "East":
-            //       // print("Looked Right");
-            //        return true;
-            //    case "West":
-            //       // print("Looked Left");
-            //        return true;
-            //    case "Center":
-            //        return true;
-            //    default:
-            //        return false;
-            //}
-
         }
         else
         {
