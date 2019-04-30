@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FollowCubeController : MonoBehaviour {
     //The cubes
@@ -238,5 +239,10 @@ public class FollowCubeController : MonoBehaviour {
                 break;
 
         }
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("StartRoom");
     }
 }

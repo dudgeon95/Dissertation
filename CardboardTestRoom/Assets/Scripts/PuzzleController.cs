@@ -63,15 +63,14 @@ public class PuzzleController : MonoBehaviour {
                 MovePiece(StaticClass.Right, pieces[i],RightOffset);
                 RightOffset += 1.0f;
             }
-           
-            pieces[i].SetInitialVals(pieces[i].gameObject.transform.position, pieces[i].gameObject.transform.rotation);
             //Pieces always face user
             //get direction (pos of the piece - pos of the camera)
             Vector3 direction = pieces[i].transform.position - Camera.main.transform.position;
 
-            //set forward of the piece negative as want the tex to face player
+            //set forward of the piece negative as want the texture to face player
             pieces[i].transform.forward = -direction;
-
+            //Save the intial values of the piece
+            pieces[i].SetInitialVals(pieces[i].gameObject.transform.position, pieces[i].gameObject.transform.rotation);
         }
     }
     

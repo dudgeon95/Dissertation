@@ -498,7 +498,6 @@ GameObject:
   - component: {fileID: 193451785}
   - component: {fileID: 193451784}
   - component: {fileID: 193451783}
-  - component: {fileID: 193451782}
   m_Layer: 5
   m_Name: Finished Menu
   m_TagString: Untagged
@@ -506,23 +505,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &193451782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 193451781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 096d95cc8ec275740a36ed6d96a4e201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BackMenu: {fileID: 0}
-  DataButton: {fileID: 0}
-  PuzzleButton: {fileID: 0}
-  CubeButton: {fileID: 0}
-  ROMButton: {fileID: 0}
-  confirmText: {fileID: 0}
 --- !u!65 &193451783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1351,7 +1333,7 @@ GameObject:
   - component: {fileID: 1022768476}
   - component: {fileID: 1022768475}
   m_Layer: 5
-  m_Name: Puzzle menu text
+  m_Name: Cube menu text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2132,7 +2114,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1587444495}
+      - m_Target: {fileID: 1439545621}
         m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
@@ -2600,7 +2582,6 @@ GameObject:
   - component: {fileID: 1587444498}
   - component: {fileID: 1587444497}
   - component: {fileID: 1587444496}
-  - component: {fileID: 1587444495}
   m_Layer: 5
   m_Name: 'Start Menu '
   m_TagString: Untagged
@@ -2608,23 +2589,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1587444495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1587444494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 096d95cc8ec275740a36ed6d96a4e201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BackMenu: {fileID: 0}
-  DataButton: {fileID: 0}
-  PuzzleButton: {fileID: 0}
-  CubeButton: {fileID: 0}
-  ROMButton: {fileID: 0}
-  confirmText: {fileID: 0}
 --- !u!65 &1587444496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2803,7 +2767,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 193451782}
+      - m_Target: {fileID: 1439545621}
         m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:

@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/PuzzleRoom3.unity
     guid: 6e3f22ec3979a484ba005fcbe7e50369
   - enabled: 1
-    path: Assets/Scenes/SimonSays.unity
+    path: Assets/Scenes/FollowTheCube.unity
     guid: cb7a41eeab8e135448582040b2fcd063
   m_configObjects: {}

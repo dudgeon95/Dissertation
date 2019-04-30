@@ -33,7 +33,7 @@ public class MenuController : MonoBehaviour {
        
         BackMenu.SetActive(true);
             
-     }
+    }
     //Method to load the puzzle scene
     public void LoadPuzzle()
     {

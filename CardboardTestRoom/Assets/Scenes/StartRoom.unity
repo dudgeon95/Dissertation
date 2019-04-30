@@ -1607,7 +1607,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 933936716}
+      - m_Target: {fileID: 1808477566}
         m_MethodName: LoadPuzzle
         m_Mode: 1
         m_Arguments:
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1622608988}
+      - m_Target: {fileID: 1808477566}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1873,7 +1873,6 @@ GameObject:
   - component: {fileID: 464835332}
   - component: {fileID: 464835331}
   - component: {fileID: 464835330}
-  - component: {fileID: 464835329}
   m_Layer: 5
   m_Name: ROM Menu
   m_TagString: Untagged
@@ -1881,23 +1880,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &464835329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 464835328}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 096d95cc8ec275740a36ed6d96a4e201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BackMenu: {fileID: 0}
-  DataButton: {fileID: 0}
-  PuzzleButton: {fileID: 0}
-  CubeButton: {fileID: 0}
-  ROMButton: {fileID: 0}
-  confirmText: {fileID: 0}
 --- !u!65 &464835330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2335,7 +2317,7 @@ GameObject:
   - component: {fileID: 551522859}
   - component: {fileID: 551522858}
   m_Layer: 0
-  m_Name: Simon Says Button
+  m_Name: Cube Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3349,7 +3331,6 @@ GameObject:
   - component: {fileID: 933936712}
   - component: {fileID: 933936711}
   - component: {fileID: 933936710}
-  - component: {fileID: 933936716}
   m_Layer: 5
   m_Name: Puzzle Menu
   m_TagString: Untagged
@@ -3456,23 +3437,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.1, y: 3.289}
   m_SizeDelta: {x: 727, y: 452}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &933936716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 933936709}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 096d95cc8ec275740a36ed6d96a4e201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BackMenu: {fileID: 0}
-  DataButton: {fileID: 0}
-  PuzzleButton: {fileID: 0}
-  CubeButton: {fileID: 0}
-  ROMButton: {fileID: 0}
-  confirmText: {fileID: 0}
 --- !u!1 &941461677
 GameObject:
   m_ObjectHideFlags: 0
@@ -5220,7 +5184,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 464835329}
+      - m_Target: {fileID: 1808477566}
         m_MethodName: LoadROM
         m_Mode: 1
         m_Arguments:
@@ -6709,7 +6673,6 @@ GameObject:
   - component: {fileID: 1622608991}
   - component: {fileID: 1622608990}
   - component: {fileID: 1622608989}
-  - component: {fileID: 1622608988}
   m_Layer: 5
   m_Name: Quit Menu
   m_TagString: Untagged
@@ -6717,23 +6680,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1622608988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1622608987}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 096d95cc8ec275740a36ed6d96a4e201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BackMenu: {fileID: 0}
-  DataButton: {fileID: 0}
-  PuzzleButton: {fileID: 0}
-  CubeButton: {fileID: 0}
-  ROMButton: {fileID: 0}
-  confirmText: {fileID: 0}
 --- !u!65 &1622608989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8173,7 +8119,6 @@ GameObject:
   - component: {fileID: 2023171888}
   - component: {fileID: 2023171887}
   - component: {fileID: 2023171886}
-  - component: {fileID: 2023171885}
   m_Layer: 5
   m_Name: Cube Menu
   m_TagString: Untagged
@@ -8181,23 +8126,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &2023171885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2023171884}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 096d95cc8ec275740a36ed6d96a4e201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BackMenu: {fileID: 0}
-  DataButton: {fileID: 0}
-  PuzzleButton: {fileID: 0}
-  CubeButton: {fileID: 0}
-  ROMButton: {fileID: 0}
-  confirmText: {fileID: 0}
 --- !u!65 &2023171886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8602,7 +8530,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2023171885}
+      - m_Target: {fileID: 1808477566}
         m_MethodName: FollowTheCube
         m_Mode: 1
         m_Arguments:

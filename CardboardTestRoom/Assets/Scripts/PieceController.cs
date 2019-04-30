@@ -21,7 +21,9 @@ public class PieceController : MonoBehaviour {
     // get the draggable component
     Draggable drag;
 
-    
+
+    Vector3 initialPos;
+    Quaternion initialRot;
 
     void Awake()
     {
@@ -59,8 +61,13 @@ public class PieceController : MonoBehaviour {
     void HandleFailure()
     {
         //send the piece back to its original position
-        drag.SendToSpawnPos();
+        SendToSpawnPos();
         isPlaced = false;
+    }
+    void SendToSpawnPos()
+    {
+        transform.position = initialPos;
+        transform.rotation = initialRot;
     }
 
     void HandleDrop()
@@ -128,7 +135,7 @@ public class PieceController : MonoBehaviour {
         //If cell is taken send the piece back to its original position
         else
         {
-            drag.SendToSpawnPos();
+            SendToSpawnPos();
         }
         
     }
@@ -146,6 +153,9 @@ public class PieceController : MonoBehaviour {
 
     public void SetInitialVals(Vector3 pos, Quaternion rot)
     {
-        drag.SetInitial(pos, rot);
+        print("Set vals in");
+        initialPos = pos;
+        initialRot = rot;
+        print("Set vals after drag");
     }
 }

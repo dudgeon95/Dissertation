@@ -28,9 +28,6 @@ using VRStandardAssets.Utils;
 
         State currState;
 
-        Vector3 initialPos;
-        Quaternion initialRot;
-
         //Keep track if something is already being dragged
         static bool isDragging = false;
 
@@ -57,11 +54,7 @@ using VRStandardAssets.Utils;
             vrInteractive.OnClick -= HandleClick;
         }
 
-         public void SetInitial(Vector3 pos, Quaternion rot)
-         {
-             initialPos = pos;
-             initialRot = rot;
-         }
+        
 
         public void HandleClick()
         {
@@ -117,12 +110,7 @@ using VRStandardAssets.Utils;
             }
         }
 
-        //Send item back to its original pos and rot 
-        public void SendToSpawnPos()
-        {
-            transform.position = initialPos;
-            transform.rotation = initialRot;
-        }
+       
 
         // Block a draggable item
         public void SetBlockState(bool isblock)
